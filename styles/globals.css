@@ -1,3 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  font-family: 'Space Grotesk', Geneva, Tahoma, sans-serif;
+}
+
+
+h1#name {
+  position: relative;
+}
+h1#name::after {
+  content: '';
+  height: 2px;
+  width: 80%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 100%;
+  @apply bg-accent-500;
+}
