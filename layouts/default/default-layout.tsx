@@ -4,7 +4,7 @@ import DefaultFooter from "./default-footer";
 
 const DefaultLayout = ({ children }: { children: ReactElement }) => {
   return (
-    <div>
+    <div className="antialiased">
       <DefaultHeader />
       <div className="flex flex-col min-h-screen">
       <main>
