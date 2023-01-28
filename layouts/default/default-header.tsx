@@ -16,7 +16,7 @@ const DefaultHeader = () => {
               </Link>
             </li>
             <li className="px-4 py-1 bg-transparent hover:bg-primary hover:text-white hover:cursor-pointer transition rounded">
-              <Link href="#">
+              <Link href="/projects">
                   Projets
               </Link>
             </li>

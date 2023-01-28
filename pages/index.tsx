@@ -16,7 +16,7 @@ export async function getStaticProps() {
   try {
     const client = createContentfulClient()
 
-    const res = await client.getEntries({ content_type: "project" });
+    const res = await client.getEntries({ content_type: "project", "fields.featured": true });
 
     return {
       props: {
@@ -131,7 +131,7 @@ const Home = ({ projects }: HomePageProps) => {
               Découvrez les derniers projets que j'ai réalisés
             </h2>
 
-            <ALink href="#">
+            <ALink href="/projects">
               <>Voir tous les projets</>
             </ALink>
           </div>

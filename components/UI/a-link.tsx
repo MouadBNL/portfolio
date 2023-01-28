@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ReactElement } from "react";
 
 interface ALinkProps {
@@ -7,8 +8,8 @@ interface ALinkProps {
 
 const ALink = ({ children, href }: ALinkProps) => {
   return (
-    <a
-      href={href}
+    <Link
+      href={href ?? '#'}
       className="text-lg text-gr-50 flex items-center gap-2 border-b border-accent w-fit a-link hover:gap-4 transition-all"
     >
       <span>{children}</span>
@@ -34,7 +35,7 @@ const ALink = ({ children, href }: ALinkProps) => {
           strokeLinejoin="round"
         />
       </svg>
-    </a>
+    </Link>
   );
 };
 

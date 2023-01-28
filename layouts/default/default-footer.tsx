@@ -1,6 +1,6 @@
 const DefaultFooter = () => {
   return (
-    <footer className="mt-auto bg-gr-900 py-24 text-gr-50">
+    <footer className="mt-auto bg-gr-900 py-24 text-gr-50 border-t border-gr-700">
       <div className="container mx-auto">
         <div className="flex justify-between items-stretch pb-8 mb-8 border-b border-gray-600">
           <div>

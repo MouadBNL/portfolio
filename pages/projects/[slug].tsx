@@ -67,7 +67,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
           />
         </section>
       )}
-      <section className="py-32 bg-gr-900 border-b border-gr-700">
+      <section className="py-32 bg-gr-900">
         <div className="container mx-auto grid grid-cols-4 gap-4">
           <div className="">
             <div className="sticky top-24">
