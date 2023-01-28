@@ -44,7 +44,7 @@ export interface Project {
       }
     }
   },
-  "github": string,
-  "demo": string,
-  "technologies": Array<string>
+  "github"?: string,
+  "demo"?: string,
+  "technologies"?: Array<string>
 }

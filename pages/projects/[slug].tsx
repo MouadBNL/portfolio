@@ -89,6 +89,16 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
                   </h3>
                 </div>
               )}
+              {!!project.fields.technologies && (
+                <div className="mb-8">
+                  <h3 className="text-xl font-bold text-gr-400 mb-2">
+                    Technologies
+                  </h3>
+                  <h3 className="text-2xl font-medium text-gr-50">
+                    {project.fields.technologies.join(", ")}
+                  </h3>
+                </div>
+              )}
             </div>
           </div>
 

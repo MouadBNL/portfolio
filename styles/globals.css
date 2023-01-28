@@ -23,6 +23,9 @@ h1#name::after {
   @apply bg-accent-500;
 }
 
+#main-header {
+  backdrop-filter: blur(15px);
+}
 
 
 .contentful-rich-text {
@@ -31,11 +34,25 @@ h1#name::after {
 
 
 .contentful-rich-text h1 {
-  @apply text-gr-50 text-2xl font-bold mb-4;
+  @apply text-gr-50 text-3xl font-bold mb-8;
+}
+.contentful-rich-text h2 {
+  @apply text-gr-50 text-2xl font-bold mb-8;
+}
+.contentful-rich-text h3 {
+  @apply text-gr-50 text-xl font-medium mb-8;
 }
 
 .contentful-rich-text p {
   @apply text-gr-200 text-lg mb-4 text-justify;
+}
+
+
+.contentful-rich-text ul {
+  @apply ml-4 list-disc;
+}
+.contentful-rich-text ol {
+  @apply ml-4 list-decimal;
 }
 
 .contentful-rich-text img {
