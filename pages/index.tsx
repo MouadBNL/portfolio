@@ -37,7 +37,6 @@ interface HomePageProps {
 }
 
 const Home = ({ projects }: HomePageProps) => {
-  console.log(projects);
   return (
     <>
       <section className="bg-gr-900 text-gr-50 relative z-0">

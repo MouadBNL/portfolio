@@ -45,6 +45,7 @@ interface ProjectDetailsProps {
 }
 
 const ProjectDetails = ({ project }: ProjectDetailsProps) => {
+  console.log(project);
   return (
     <>
       <section className="bg-gr-900 py-24 text-gr-50">
@@ -58,7 +59,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         </div>
       </section>
       {project.fields.thumbnail.fields.file.url && (
-        <section className="w-full aspect-video bg-gr-800 relative">
+        <section className="w-full aspect-video bg-gr-800 relative overflow-hidden">
           <img
             className="absolute inset-0 object-cover w-full"
             src={`https:${project.fields.thumbnail.fields.file.url}`}
@@ -80,7 +81,9 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
               )}
               {!!project.fields.service && (
                 <div className="mb-8">
-                  <h3 className="text-xl font-bold text-gr-400 mb-2">Service</h3>
+                  <h3 className="text-xl font-bold text-gr-400 mb-2">
+                    Service
+                  </h3>
                   <h3 className="text-2xl font-medium text-gr-50">
                     {project.fields.service}
                   </h3>
@@ -90,20 +93,28 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
           </div>
 
           <div className="col-span-2 contentful-rich-text">
-            {documentToReactComponents(project.fields.about, {
-              renderNode: {
-                [BLOCKS.EMBEDDED_ASSET]: (node) => (
-                  <figure className="my-8">
-                    <img
-                    className="mb-4"
-                      src={node.data?.target?.fields?.file?.url}
-                      alt={node.data?.target?.fields?.title}
-                    />
-                    <figcaption className="text-center text-gr-500">{node.data?.target?.fields?.title}</figcaption>
-                  </figure>
-                ),
-              },
-            })}
+            {!!project.fields.about ? (
+              <div>
+                {documentToReactComponents(project.fields.about, {
+                  renderNode: {
+                    [BLOCKS.EMBEDDED_ASSET]: (node) => (
+                      <figure className="my-8">
+                        <img
+                          className="mb-4"
+                          src={node.data?.target?.fields?.file?.url}
+                          alt={node.data?.target?.fields?.title}
+                        />
+                        <figcaption className="text-center text-gr-500">
+                          {node.data?.target?.fields?.title}
+                        </figcaption>
+                      </figure>
+                    ),
+                  },
+                })}
+              </div>
+            ) : (
+              <p>Section à propos du projet en cours de développement</p>
+            )}
           </div>
 
           <div className="">
