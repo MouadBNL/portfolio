@@ -22,3 +22,22 @@ h1#name::after {
   border-radius: 100%;
   @apply bg-accent-500;
 }
+
+
+
+.contentful-rich-text {
+  @apply text-gr-50;
+}
+
+
+.contentful-rich-text h1 {
+  @apply text-gr-50 text-2xl font-bold mb-4;
+}
+
+.contentful-rich-text p {
+  @apply text-gr-200 text-lg mb-4 text-justify;
+}
+
+.contentful-rich-text img {
+  @apply block w-full aspect-video rounded-lg;
+}

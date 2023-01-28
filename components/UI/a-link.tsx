@@ -9,7 +9,7 @@ const ALink = ({ children, href }: ALinkProps) => {
   return (
     <a
       href={href}
-      className="text-lg flex items-center gap-2 border-b border-accent w-fit a-link hover:gap-4 transition-all"
+      className="text-lg text-gr-50 flex items-center gap-2 border-b border-accent w-fit a-link hover:gap-4 transition-all"
     >
       <span>{children}</span>
       <svg

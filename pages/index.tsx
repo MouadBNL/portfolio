@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 
-import DefaultLayout from "@/layouts/default/default-layout";
 import Button from "@/components/UI/button";
 import ALink from "@/components/UI/a-link";
 import Section from "@/components/UI/section";
@@ -8,16 +7,14 @@ import SkillCard from "@/components/skill-card";
 import ProjectCard from "@/components/project-card";
 import ContactForm from "@/components/contact-form";
 
-import { Entry, createClient } from "contentful";
+import { Entry } from "contentful";
 import { useEffect } from "react";
 import { Project } from "@/types/project";
+import { createContentfulClient } from "@/utils/contentful";
 
 export async function getStaticProps() {
   try {
-    const client = createClient({
-      space: process.env.CONTENTFUL_SPACE_ID as string,
-      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
-    });
+    const client = createContentfulClient()
 
     const res = await client.getEntries({ content_type: "project" });
 

@@ -2,6 +2,10 @@ export interface Project {
   "featured": boolean,
   "title": string,
   "slug": string,
+  "summary": string,
+  "client"?: string,
+  "service"?: string,
+  "about"?: any
   "thumbnail": {
     [key:string] : any,
     "fields": {
