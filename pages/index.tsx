@@ -8,7 +8,40 @@ import SkillCard from "@/components/skill-card";
 import ProjectCard from "@/components/project-card";
 import ContactForm from "@/components/contact-form";
 
-const Home: NextPage = () => {
+import { Entry, createClient } from "contentful";
+import { useEffect } from "react";
+import { Project } from "@/types/project";
+
+export async function getStaticProps() {
+  try {
+    
+    const client = createClient({
+      space: process.env.CONTENTFUL_SPACE_ID as string,
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string
+    })
+  
+    const res = await client.getEntries({ content_type: 'project'})
+  
+    return {
+      props: {
+        projects: res.items
+      }
+    }
+  } catch (error) {
+    return {
+      props: {
+        projects: null
+      }
+    }
+  }
+}
+
+interface HomePageProps {
+  projects: Entry<Project>[]
+}
+
+const Home = ({ projects }: HomePageProps) => {
+  console.log(projects)
   return (
     <DefaultLayout>
       <>
@@ -97,9 +130,13 @@ const Home: NextPage = () => {
             </div>
 
             <div className="grid grid-cols-3 gap-8">
-              <ProjectCard title="PFE Insight" icon={<>F</>} technologies={['VueJs', 'Laravel']} github="test" demo="test" />
+              {/* <ProjectCard title="PFE Insight" icon={<>F</>} technologies={['VueJs', 'Laravel']} github="test" demo="test" />
               <ProjectCard title="FEE7 Platform" technologies={['VueJs', 'Laravel', 'fdsgsd', 'fdgsfgdsf', 'fdgsfdgs']} github="test" demo="test" />
-              <ProjectCard title="Judge0 package" technologies={['ReactJS', 'Laravel', 'Judge0']} github="test" />
+              <ProjectCard title="Judge0 package" technologies={['ReactJS', 'Laravel', 'Judge0']} github="test" /> */}
+
+              {projects.map(p => (
+                <ProjectCard project={p.fields} key={p.sys.id}/>
+              ))}
             </div>
           </>
         </Section>

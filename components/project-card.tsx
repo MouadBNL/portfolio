@@ -1,30 +1,24 @@
+import { Project } from "@/types/project";
+import Image from "next/image";
+import Link from "next/link";
 import { ReactElement } from "react";
 
 interface ProjectCardProps {
-  technologies?: Array<string>;
-  demo?: string;
-  github?: string;
-  icon?: ReactElement;
-  title: string;
-  image?: string;
+  project: Project;
 }
 
-const ProjectCard = ({
-  technologies,
-  demo,
-  github,
-  icon,
-  title,
-  image,
-}: ProjectCardProps) => {
+const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <div className="p-5 rounded-lg bg-gr-800 shadow-lg">
+    <div className="p-5 rounded-lg bg-gr-800 shadow-lg project-card">
       <header className="mb-5">
         <div className="w-full flex gap-4 justify-between items-center mb-4">
           <ul className="flex gap-2 overflow-hidden">
-            {technologies?.map((tech) => {
+            {project.technologies?.map((tech) => {
               return (
-                <li className="px-4 py-1 rounded bg-gr-900 font-medium text-gr-400" key={tech}>
+                <li
+                  className="px-4 py-1 rounded bg-gr-900 font-medium text-gr-400"
+                  key={tech}
+                >
                   {tech}
                 </li>
               );
@@ -32,10 +26,11 @@ const ProjectCard = ({
           </ul>
 
           <ul className="flex gap-4">
-            {!!github && (
+            {!!project.github && (
               <li>
                 <a
-                  href={github}
+                  target="_blank"
+                  href={project.github}
                   className="flex items-center justify-center w-11 h-11 bg-gr-900 rounded-full hover:bg-gr-700 transition"
                 >
                   <svg
@@ -63,10 +58,11 @@ const ProjectCard = ({
                 </a>
               </li>
             )}
-            {!!demo && (
+            {!!project.demo && (
               <li>
                 <a
-                  href={demo}
+                  target="_blank"
+                  href={project.demo}
                   className="flex items-center justify-center w-11 h-11 bg-gr-900 rounded-full hover:bg-gr-700 transition"
                 >
                   <svg
@@ -104,20 +100,32 @@ const ProjectCard = ({
           </ul>
         </div>
 
-        <div className="flex gap-4 items-center h-11">
-          {!!icon && (
-            <div className="w-11 h-11 flex-shrink-0 bg-gr-900 flex items-center justify-center rounded-full">
-              {icon}
-            </div>
-          )}
-          <h3 className="text-3xl font-bold text-gr-50">{title}</h3>
-        </div>
+        <Link href={`/projects/${project.slug}`}>
+          <div className="flex gap-4 items-center h-11">
+            {!!project.icon && (
+              <div className="w-11 h-11 flex-shrink-0 bg-gr-900 flex items-center justify-center rounded-full">
+                {project.icon.fields.file.url}
+              </div>
+            )}
+            <h3 className="text-3xl font-bold text-gr-50">{project.title}</h3>
+          </div>
+        </Link>
       </header>
 
-      <div className="w-full aspect-square">
-
-        <img className="block w-full aspect-square object-cover rounded-lg" src={image ?? 'https://via.placeholder.com/300x300'} alt={title + ' image'} />
-      </div>
+      <Link href={`/projects/${project.slug}`}>
+        <div className="w-full aspect-square overflow-hidden rounded-lg">
+          <img
+            className="block w-full aspect-square object-cover project-image transition-all"
+            src={'https:' + project.thumbnail.fields.file.url ?? "https://via.placeholder.com/300x300"}
+            alt={project.title + " image"}
+          />
+        </div>
+      </Link>
+      <style jsx>{`
+        .project-card:hover .project-image {
+          transform: scale(1.2);
+        }
+      `}</style>
     </div>
   );
 };
