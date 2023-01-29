@@ -37,22 +37,25 @@ export async function getStaticProps() {
 
 const HeroSection = () => {
   return (
-    <section className="bg-gr-900 text-gr-50 relative z-0">
-      <div className="absolute bottom-0 right-16">
+    <section className="bg-gr-900 text-gr-50 relative z-0 px-8">
+      <div className="absolute bottom-0 right-2 md:right-4 lg:right-16">
         <span
           className="block mb-4 opacity-50 hover:opacity-100 transition-opacity cursor-pointer"
           style={{ textOrientation: "mixed", writingMode: "vertical-rl" }}
         >
           mouadbnl.2k01@gmail.com
         </span>
-        <div className="h-28 bg-primary mx-auto" style={{ width: "2px" }}></div>
+        <div
+          className="h-4 md:h-28 bg-primary mx-auto"
+          style={{ width: "2px" }}
+        ></div>
       </div>
       <div className="min-h-screen flex items-center justify-center container mx-auto flex-col py-28">
-        <div className="w-7/12 mb-36">
-          <h2 className="text-6xl text-center font-bold mb-8">
+        <div className="md:w-10/12 lg:w-7/12 mb-36">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl text-center font-bold mb-8">
             Bienvenue, je suis Benali Mouad, Développeur web
           </h2>
-          <p className="text-xl text-center text-gray-400 w-10/12 mx-auto mb-8">
+          <p className="text-lg md:text-xl text-center text-gray-400 w-full md:w-10/12 mx-auto mb-8">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
             mollitia, molestiae quas vel sint commodi repudiandae consequuntur
             voluptatum
@@ -64,8 +67,8 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="flex items-stretch justify-between w-9/12">
-          <div className="w-4/12 flex flex-col flex-grow-0 flex-shrink-0">
+        <div className="flex items-stretch justify-between  w-full sm:w-9/12 md:w-11/12 lg:w-9/12 flex-col md:flex-row gap-y-8">
+          <div className="w-full md:w-5/12 lg:w-4/12 flex flex-col flex-grow-0 flex-shrink-0">
             <div className="mb-4">
               <h3 className="text-2xl font-bold mb-4">À propos de moi</h3>
               <p className="text-gr-400 text-lg text-justify">
@@ -81,8 +84,15 @@ const HeroSection = () => {
               </ALink>
             </div>
           </div>
-          <div className="w-1 bg-gr-400" style={{ width: "1px" }}></div>
-          <div className="w-4/12 flex flex-col flex-grow-1 flex-shrink-0">
+          <div
+            className="hidden md:block bg-gr-400"
+            style={{ width: "1px" }}
+          ></div>
+          <div
+            className="block md:hidden bg-gr-400"
+            style={{ height: "1px" }}
+          ></div>
+          <div className="w-full md:w-5/12 lg:w-4/12 flex flex-col flex-grow-1 flex-shrink-0">
             <div className="mb-4">
               <h3 className="text-2xl font-bold mb-4">Mon travail</h3>
               <p className="text-gr-400 text-lg text-justify">
@@ -107,11 +117,11 @@ const SkillsSection = () => {
   return (
     <Section backgroundColor="bg-gr-800" title="Skills">
       <>
-        <h2 className="text-4xl w-1/2 font-bold mb-12">
+        <h2 className="text-3xl md:text-4xl w-full lg:w-2/3 xl:w-1/2 font-bold mb-12">
           Une liste des compétences que j'ai développées au fil du temps
         </h2>
 
-        <div className="grid grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <SkillCard name="Javascript" />
           <SkillCard name="Javascript" />
           <SkillCard name="Javascript" />
@@ -130,8 +140,8 @@ const ProjectsSection = ({ projects }: { projects: Entry<Project>[] }) => {
   return (
     <Section backgroundColor="bg-gr-900" title="Projets">
       <>
-        <div className="mb-12 flex justify-between items-start">
-          <h2 className="text-4xl w-4/12 font-bold">
+        <div className="mb-12 flex justify-between items-start flex-col md:flex-row gap-y-8">
+          <h2 className="text-3xl md:text-4xl w-full md:w-8/12 xl:w-4/12 font-bold">
             Découvrez les derniers projets que j'ai réalisés
           </h2>
 
@@ -140,7 +150,7 @@ const ProjectsSection = ({ projects }: { projects: Entry<Project>[] }) => {
           </ALink>
         </div>
 
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-4 xl:gap-x-8 gap-y-12">
           {/* <ProjectCard title="PFE Insight" icon={<>F</>} technologies={['VueJs', 'Laravel']} github="test" demo="test" />
               <ProjectCard title="FEE7 Platform" technologies={['VueJs', 'Laravel', 'fdsgsd', 'fdgsfgdsf', 'fdgsfdgs']} github="test" demo="test" />
               <ProjectCard title="Judge0 package" technologies={['ReactJS', 'Laravel', 'Judge0']} github="test" /> */}
@@ -158,10 +168,10 @@ const ContactSection = () => {
   return (
     <Section backgroundColor="bg-gr-800" title="Contact">
       <>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-16">
           <div>
             <div className="sticky top-24">
-              <h2 className="text-3xl font-bold text-gr-50 w-2/3 mb-8">
+              <h2 className="text-3xl font-bold text-gr-50 xl:w-2/3 mb-8">
                 Intéressé par mon travail ? Prenons contact !
               </h2>
 

@@ -23,7 +23,7 @@ h1#name::after {
   @apply bg-accent-500;
 }
 
-#main-header {
+#main-header,  .nav-items {
   backdrop-filter: blur(15px);
 }
 

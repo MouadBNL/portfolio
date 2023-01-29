@@ -67,8 +67,8 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
           />
         </section>
       )}
-      <section className="py-32 bg-gr-900">
-        <div className="container mx-auto grid grid-cols-4 gap-4">
+      <section className="py-32 bg-gr-900 px-4">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-4 gap-4">
           <div className="">
             <div className="sticky top-24">
               {!!project.fields.client && (
@@ -102,7 +102,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
             </div>
           </div>
 
-          <div className="col-span-2 contentful-rich-text">
+          <div className="col-span-2 contentful-rich-text order-3 lg:order-2 lg:mt-0 mt-16">
             {!!project.fields.about ? (
               <div>
                 {documentToReactComponents(project.fields.about, {
@@ -127,7 +127,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
             )}
           </div>
 
-          <div className="">
+          <div className="order-2 lg:order-3">
             <div className="sticky top-24 flex flex-col justify-end">
               {!!project.fields.github && (
                 <div className="mb-8 ml-auto">

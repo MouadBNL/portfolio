@@ -8,7 +8,7 @@ interface SectionProps {
 
 const Section = ({ children, title, backgroundColor }: SectionProps) => {
   return (
-    <section className={"py-24 text-gr-50 " + backgroundColor}>
+    <section className={"py-24 text-gr-50 px-4 md:px-8 " + backgroundColor}>
       <div className="container mx-auto">
         <h3 className="text-2xl font-bold">
           <span className="text-primary">{"<"}</span>
