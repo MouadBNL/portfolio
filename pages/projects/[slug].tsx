@@ -1,51 +1,51 @@
-import ALink from "@/components/UI/a-link";
-import { Project } from "@/types/project";
-import { createContentfulClient } from "@/utils/contentful";
-import { Entry } from "contentful";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import ALink from "@/components/UI/a-link"
+import { Project } from "@/types/project"
+import { createContentfulClient } from "@/utils/contentful"
+import { Entry } from "contentful"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { BLOCKS, INLINES } from "@contentful/rich-text-types"
 
-const client = createContentfulClient();
+const client = createContentfulClient()
 
 export const getStaticPaths = async () => {
   const res = await client.getEntries<Project>({
     content_type: "project",
-  });
+  })
 
   const paths = res.items.map((item) => {
     return {
       params: {
         slug: item.fields.slug,
       },
-    };
-  });
+    }
+  })
 
   return {
     paths,
     fallback: false,
-  };
-};
+  }
+}
 
 export const getStaticProps = async ({ params }: { params: any }) => {
-  const slug = params.slug as string;
+  const slug = params.slug as string
   const res = await client.getEntries<Project>({
     content_type: "project",
     "fields.slug": slug,
-  });
+  })
 
   return {
     props: {
       project: res.items[0],
     },
-  };
-};
+  }
+}
 
 interface ProjectDetailsProps {
-  project: Entry<Project>;
+  project: Entry<Project>
 }
 
 const ProjectDetails = ({ project }: ProjectDetailsProps) => {
-  console.log(project);
+  console.log(project)
   return (
     <>
       <section className="bg-gr-900 py-24 text-gr-50">
@@ -150,7 +150,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         </div>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default ProjectDetails;
+export default ProjectDetails

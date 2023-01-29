@@ -1,5 +1,5 @@
-import { ReactElement } from "react";
-import Button from "./UI/button";
+import { ReactElement } from "react"
+import Button from "./UI/button"
 
 interface ContactFormProps {}
 
@@ -39,9 +39,11 @@ const ContactForm = ({}: ContactFormProps) => {
           placeholder="Contenu de votre message"
         ></textarea>
       </div>
-        <Button WFull={true}><>Envoyer</></Button>
+      <Button WFull={true}>
+        <>Envoyer</>
+      </Button>
     </form>
-  );
-};
+  )
+}
 
-export default ContactForm;
+export default ContactForm

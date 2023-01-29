@@ -1,10 +1,10 @@
-import { Project } from "@/types/project";
-import Image from "next/image";
-import Link from "next/link";
-import { ReactElement } from "react";
+import { Project } from "@/types/project"
+import Image from "next/image"
+import Link from "next/link"
+import { ReactElement } from "react"
 
 interface ProjectCardProps {
-  project: Project;
+  project: Project
 }
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
@@ -21,7 +21,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 >
                   {tech}
                 </li>
-              );
+              )
             })}
           </ul>
 
@@ -116,7 +116,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         <div className="w-full aspect-square overflow-hidden rounded-lg">
           <img
             className="block w-full aspect-square object-cover project-image transition-all"
-            src={'https:' + project.thumbnail.fields.file.url ?? "https://via.placeholder.com/300x300"}
+            src={
+              "https:" + project.thumbnail.fields.file.url ??
+              "https://via.placeholder.com/300x300"
+            }
             alt={project.title + " image"}
           />
         </div>
@@ -127,7 +130,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         }
       `}</style>
     </div>
-  );
-};
+  )
+}
 
-export default ProjectCard;
+export default ProjectCard

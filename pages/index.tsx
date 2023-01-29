@@ -1,37 +1,37 @@
-import type { NextPage } from "next";
+import type { NextPage } from "next"
 
-import Button from "@/components/UI/button";
-import ALink from "@/components/UI/a-link";
-import Section from "@/components/UI/section";
-import SkillCard from "@/components/skill-card";
-import ProjectCard from "@/components/project-card";
-import ContactForm from "@/components/contact-form";
+import Button from "@/components/UI/button"
+import ALink from "@/components/UI/a-link"
+import Section from "@/components/UI/section"
+import SkillCard from "@/components/skill-card"
+import ProjectCard from "@/components/project-card"
+import ContactForm from "@/components/contact-form"
 
-import { Entry } from "contentful";
-import { useEffect } from "react";
-import { Project } from "@/types/project";
-import { createContentfulClient } from "@/utils/contentful";
+import { Entry } from "contentful"
+import { useEffect } from "react"
+import { Project } from "@/types/project"
+import { createContentfulClient } from "@/utils/contentful"
 
 export async function getStaticProps() {
   try {
-    const client = createContentfulClient();
+    const client = createContentfulClient()
 
     const res = await client.getEntries({
       content_type: "project",
       "fields.featured": true,
-    });
+    })
 
     return {
       props: {
         projects: res.items,
       },
-    };
+    }
   } catch (error) {
     return {
       props: {
         projects: null,
       },
-    };
+    }
   }
 }
 
@@ -100,8 +100,8 @@ const HeroSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
 const SkillsSection = () => {
   return (
@@ -123,8 +123,8 @@ const SkillsSection = () => {
         </div>
       </>
     </Section>
-  );
-};
+  )
+}
 
 const ProjectsSection = ({ projects }: { projects: Entry<Project>[] }) => {
   return (
@@ -151,8 +151,8 @@ const ProjectsSection = ({ projects }: { projects: Entry<Project>[] }) => {
         </div>
       </>
     </Section>
-  );
-};
+  )
+}
 
 const ContactSection = () => {
   return (
@@ -176,11 +176,11 @@ const ContactSection = () => {
         </div>
       </>
     </Section>
-  );
-};
+  )
+}
 
 interface HomePageProps {
-  projects: Entry<Project>[];
+  projects: Entry<Project>[]
 }
 
 const Home = ({ projects }: HomePageProps) => {
@@ -191,7 +191,7 @@ const Home = ({ projects }: HomePageProps) => {
       <ProjectsSection projects={projects} />
       <ContactSection />
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

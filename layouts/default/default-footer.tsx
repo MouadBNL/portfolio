@@ -60,7 +60,7 @@ const DefaultFooter = () => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default DefaultFooter;
+export default DefaultFooter
