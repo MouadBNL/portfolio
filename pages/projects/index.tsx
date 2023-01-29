@@ -2,6 +2,7 @@ import ProjectCard from "@/components/project-card"
 import { Project } from "@/types/project"
 import { createContentfulClient } from "@/utils/contentful"
 import { Entry } from "contentful"
+import { Head } from "next/document"
 
 export const getStaticProps = async () => {
   const client = createContentfulClient()
@@ -21,16 +22,21 @@ interface ProjectsPage {
 
 const ProjectsPage = ({ projects }: ProjectsPage) => {
   return (
-    <section className="text-gr-50 bg-gr-900 py-32 px-4">
-      <div className="container mx-auto">
-        <h1 className="mb-32 text-6xl font-bold text-center">Projets</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <ProjectCard project={project.fields} key={project.sys.id} />
-          ))}
+    <>
+      <Head>
+        <title>Projets - Benali Mouad</title>
+      </Head>
+      <section className="text-gr-50 bg-gr-900 py-32 px-4">
+        <div className="container mx-auto">
+          <h1 className="mb-32 text-6xl font-bold text-center">Projets</h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project) => (
+              <ProjectCard project={project.fields} key={project.sys.id} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
 export default ProjectsPage

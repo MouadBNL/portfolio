@@ -11,6 +11,7 @@ import { Entry } from "contentful"
 import { useEffect } from "react"
 import { Project } from "@/types/project"
 import { createContentfulClient } from "@/utils/contentful"
+import Head from "next/head"
 
 export async function getStaticProps() {
   try {
@@ -196,6 +197,9 @@ interface HomePageProps {
 const Home = ({ projects }: HomePageProps) => {
   return (
     <>
+      <Head>
+        <title>Benali Mouad - Portfolio</title>
+      </Head>
       <HeroSection />
       <SkillsSection />
       <ProjectsSection projects={projects} />

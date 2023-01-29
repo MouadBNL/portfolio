@@ -4,6 +4,7 @@ import { createContentfulClient } from "@/utils/contentful"
 import { Entry } from "contentful"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS, INLINES } from "@contentful/rich-text-types"
+import Head from "next/head"
 
 const client = createContentfulClient()
 
@@ -48,6 +49,9 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
   console.log(project)
   return (
     <>
+      <Head>
+        <title>{project.fields.title} - Benali Mouad</title>
+      </Head>
       <section className="bg-gr-900 py-24 text-gr-50">
         <div className="container mx-auto">
           <h1 className="text-5xl font-bold w-1/2 mt-24 mb-8">
