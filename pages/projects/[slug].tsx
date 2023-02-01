@@ -112,9 +112,9 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
                 {documentToReactComponents(project.fields.about, {
                   renderNode: {
                     [BLOCKS.EMBEDDED_ASSET]: (node) => (
-                      <figure className="my-8">
+                      <figure className="mt-8 mb-12">
                         <img
-                          className="mb-4"
+                          className="mb-2"
                           src={node.data?.target?.fields?.file?.url}
                           alt={node.data?.target?.fields?.title}
                         />

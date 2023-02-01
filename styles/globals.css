@@ -56,5 +56,5 @@ h1#name::after {
 }
 
 .contentful-rich-text img {
-  @apply block w-full aspect-video rounded-lg;
+  @apply block w-full rounded-lg;
 }
