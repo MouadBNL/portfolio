@@ -58,3 +58,7 @@ h1#name::after {
 .contentful-rich-text img {
   @apply block w-full rounded-lg;
 }
+.contentful-rich-text code {
+  white-space: pre-wrap;
+  @apply block bg-gr-700 p-4 rounded text-sm;
+}
