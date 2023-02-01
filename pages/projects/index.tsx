@@ -2,7 +2,7 @@ import ProjectCard from "@/components/project-card"
 import { Project } from "@/types/project"
 import { createContentfulClient } from "@/utils/contentful"
 import { Entry } from "contentful"
-import { Head } from "next/document"
+import Head from "next/head"
 
 export const getStaticProps = async () => {
   const client = createContentfulClient()
