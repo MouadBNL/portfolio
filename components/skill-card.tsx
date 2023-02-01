@@ -8,7 +8,7 @@ interface SkillCardProps {
 const SkillCard = ({ icon, name }: SkillCardProps) => {
   return (
     <div className="p-5 flex items-center rounded-lg bg-gr-900 shadow-lg">
-      <div className="w-16 h-16 bg-gray-700 mr-8 rounded-full flex-shrink-0">
+      <div className="w-16 h-16 bg-gray-700 mr-8 rounded-full flex-shrink-0 flex items-center justify-center">
         {icon ?? ""}
       </div>
 
