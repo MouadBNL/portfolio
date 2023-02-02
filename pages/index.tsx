@@ -63,11 +63,11 @@ const HeroSection = () => {
             voluptatum
           </p>
           <div className="flex justify-center">
-            <Link href="#contact">
+            <a href="#contact">
               <Button>
                 <>Contact</>
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
 
