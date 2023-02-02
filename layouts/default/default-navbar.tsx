@@ -9,7 +9,6 @@ export const DefaultNavbar = () => {
   const [navOpen, setNavOpen] = useState(false)
   const toggleNavBar = () => {
     navOpen ? closeNav() : openNav()
-    setNavOpen(!navOpen)
   }
 
   const openNav = () => {
@@ -20,6 +19,7 @@ export const DefaultNavbar = () => {
       navRef.current?.classList.add("left-0")
       navRef.current?.classList.add("opacity-100")
     }, 100)
+    setNavOpen(true)
   }
 
   const closeNav = () => {
@@ -30,11 +30,12 @@ export const DefaultNavbar = () => {
     navRef.current?.classList.remove("opacity-100")
     setTimeout(() => {
       navRef.current?.classList.add("hidden")
-    }, 1000)
+    }, 500)
+    setNavOpen(false)
   }
 
   useEffect(() => {
-    navRef.current?.classList.add("hidden")
+    // navRef.current?.classList.add("hidden")
     router.events.on("routeChangeStart", closeNav)
     console.log(navRef.current)
   }, [])
@@ -44,7 +45,7 @@ export const DefaultNavbar = () => {
       <div
         ref={navRef}
         className={
-          "absolute md:opacity-100 px-4 md:px-0 inset-0 md:static transition-all top-28 duration-1000 -left-9 opacity-0"
+          "absolute hidden md:block md:opacity-100 px-4 md:px-0 inset-0 md:static transition-all top-28 duration-500 -left-9 opacity-0"
         }
       >
         <ul className="flex gap-4 text-gr-200 text-lg flex-col md:flex-row bg-gr-900 bg-opacity-100 md:bg-opacity-0 rounded-lg p-4 md:p-0 relative md:border-0 border border-gr-700">
