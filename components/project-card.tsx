@@ -113,9 +113,9 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       </header>
 
       <Link className="block" href={`/projects/${project.slug}`}>
-        <div className="w-full aspect-square overflow-hidden rounded-lg">
+        <div className="w-full aspect-video overflow-hidden rounded-lg">
           <img
-            className="block w-full aspect-square object-cover project-image transition-all"
+            className="block w-full aspect-video object-cover project-image transition-all"
             src={
               "https:" + project.thumbnail.fields.file.url ??
               "https://via.placeholder.com/300x300"
