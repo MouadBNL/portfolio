@@ -137,7 +137,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
               {!!project.fields.github && (
                 <div className="mb-8 ml-auto">
                   <h3 className="text-xl font-bold text-gr-400 mb-2">GitHub</h3>
-                  <ALink>
+                  <ALink href={project.fields.github} target="_blank">
                     <span className="text-xl">Visit repo</span>
                   </ALink>
                 </div>
@@ -145,7 +145,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
               {!!project.fields.demo && (
                 <div className="mb-8 ml-auto">
                   <h3 className="text-xl font-bold text-gr-400 mb-2">Demo</h3>
-                  <ALink>
+                  <ALink href={project.fields.demo} target="_blank">
                     <span className="text-xl">Live demo</span>
                   </ALink>
                 </div>
