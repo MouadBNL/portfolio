@@ -47,10 +47,11 @@ interface ProjectDetailsProps {
 
 const ProjectDetails = ({ project }: ProjectDetailsProps) => {
   console.log(project)
+  const pageTitle = `${project.fields.title} - Benali Mouad`
   return (
     <>
       <Head>
-        <title>{project.fields.title} - Benali Mouad</title>
+        <title>{pageTitle}</title>
       </Head>
       <section className="bg-gr-900 py-24 text-gr-50 px-4">
         <div className="container mx-auto">
