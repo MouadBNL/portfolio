@@ -2,10 +2,16 @@ const DefaultFooter = () => {
   return (
     <footer className="mt-auto bg-gr-900 py-24 text-gr-50 border-t border-gr-700 px-4">
       <div className="container mx-auto">
-        <div className="flex items-center flex-col gap-y-8 md:flex-row justify-between items-stretch pb-8 mb-8 border-b border-gray-600">
+        <div className="flex flex-col gap-y-8 md:flex-row justify-between items-stretch pb-8 mb-8 border-b border-gray-600">
           <div>
             <div className="flex items-center">
-              <div className="bg-gr-300 rounded-full h-32 w-32 mr-4 lg:mr-11 flex-shrink-0"></div>
+              <div className="bg-gr-300 rounded-full h-32 w-32 mr-4 lg:mr-11 flex-shrink-0 relative overflow-hidden">
+                <img
+                  className="inset-0"
+                  src="/BenaliMouad500x500.png"
+                  alt="Benali Mouad"
+                />
+              </div>
               <div>
                 <h2 className="text-4xl font-bold">Benali Mouad</h2>
                 <h3 className="text-xl text-gr-400">
