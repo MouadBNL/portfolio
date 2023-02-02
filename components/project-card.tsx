@@ -100,7 +100,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </ul>
         </div>
 
-        <Link href={`/projects/${project.slug}`}>
+        <Link className="block" href={`/projects/${project.slug}`}>
           <div className="flex gap-4 items-center h-11">
             {!!project.icon && (
               <div className="w-11 h-11 flex-shrink-0 bg-gr-900 flex items-center justify-center rounded-full">
@@ -112,7 +112,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </Link>
       </header>
 
-      <Link href={`/projects/${project.slug}`}>
+      <Link className="block" href={`/projects/${project.slug}`}>
         <div className="w-full aspect-square overflow-hidden rounded-lg">
           <img
             className="block w-full aspect-square object-cover project-image transition-all"

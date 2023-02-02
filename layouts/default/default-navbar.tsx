@@ -1,32 +1,56 @@
 import Button from "@/components/UI/button"
 import Link from "next/link"
-import { useRef, useState } from "react"
+import { useRouter } from "next/router"
+import { useEffect, useRef, useState } from "react"
 
 export const DefaultNavbar = () => {
-  // const navRef = useRef<HTMLDivElement | null>(null)
+  const router = useRouter()
+  const navRef = useRef<HTMLDivElement | null>(null)
   const [navOpen, setNavOpen] = useState(false)
   const toggleNavBar = () => {
-    // navRef.current?.classList.toggle("top-28")
-    // navRef.current?.classList.toggle("opacity-100")
-    // navRef.current?.classList.toggle("top-56")
-    // navRef.current?.classList.toggle("opacity-0")
+    navOpen ? closeNav() : openNav()
     setNavOpen(!navOpen)
   }
+
+  const openNav = () => {
+    navRef.current?.classList.remove("hidden")
+    setTimeout(() => {
+      navRef.current?.classList.remove("-left-9")
+      navRef.current?.classList.remove("opacity-0")
+      navRef.current?.classList.add("left-0")
+      navRef.current?.classList.add("opacity-100")
+    }, 100)
+  }
+
+  const closeNav = () => {
+    navRef.current?.classList.add("-left-9")
+    navRef.current?.classList.add("opacity-0")
+
+    navRef.current?.classList.remove("left-0")
+    navRef.current?.classList.remove("opacity-100")
+    setTimeout(() => {
+      navRef.current?.classList.add("hidden")
+    }, 1000)
+  }
+
+  useEffect(() => {
+    navRef.current?.classList.add("hidden")
+    router.events.on("routeChangeStart", closeNav)
+    console.log(navRef.current)
+  }, [])
 
   return (
     <nav>
       <div
+        ref={navRef}
         className={
-          "absolute md:opacity-100 px-4 md:px-0 inset-0 md:static transition-all" +
-          (navOpen ? " top-28 opacity-100" : " top-56 opacity-0")
+          "absolute md:opacity-100 px-4 md:px-0 inset-0 md:static transition-all top-28 duration-1000 -left-9 opacity-0"
         }
       >
         <ul className="flex gap-4 text-gr-200 text-lg flex-col md:flex-row bg-gr-900 bg-opacity-100 md:bg-opacity-0 rounded-lg p-4 md:p-0 relative md:border-0 border border-gr-700">
           <li>
             <Link
-              onClick={() => {
-                setNavOpen(false)
-              }}
+              onClick={closeNav}
               className="block px-4 py-1 bg-transparent hover:bg-primary hover:text-white hover:cursor-pointer transition rounded"
               href="/"
             >
@@ -35,9 +59,7 @@ export const DefaultNavbar = () => {
           </li>
           <li>
             <Link
-              onClick={() => {
-                setNavOpen(false)
-              }}
+              onClick={closeNav}
               className="block px-4 py-1 bg-transparent hover:bg-primary hover:text-white hover:cursor-pointer transition rounded"
               href="/projects"
             >
@@ -46,9 +68,7 @@ export const DefaultNavbar = () => {
           </li>
           <li>
             <Link
-              onClick={() => {
-                setNavOpen(false)
-              }}
+              onClick={closeNav}
               className="block px-4 py-1 bg-transparent hover:bg-primary hover:text-white hover:cursor-pointer transition rounded"
               href="#"
             >
@@ -57,9 +77,7 @@ export const DefaultNavbar = () => {
           </li>
           <li>
             <Link
-              onClick={() => {
-                setNavOpen(false)
-              }}
+              onClick={closeNav}
               className="block px-4 py-1 bg-transparent hover:bg-primary hover:text-white hover:cursor-pointer transition rounded"
               href="#"
             >
@@ -68,9 +86,7 @@ export const DefaultNavbar = () => {
           </li>
           <li>
             <Link
-              onClick={() => {
-                setNavOpen(false)
-              }}
+              onClick={closeNav}
               className="block px-4 py-1 bg-transparent hover:bg-primary hover:text-white hover:cursor-pointer transition rounded"
               href="#"
             >
