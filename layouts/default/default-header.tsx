@@ -8,9 +8,11 @@ const DefaultHeader = () => {
       id="main-header"
     >
       <div className="container mx-auto py-6 flex justify-between items-center">
-        <h1 id="name" className="text-2xl font-bold">
-          <span className="font-light">Benali</span> Mouad.
-        </h1>
+        <Link href="/">
+          <h1 id="name" className="text-2xl font-bold">
+            <span className="font-light">Benali</span> Mouad.
+          </h1>
+        </Link>
 
         <DefaultNavbar />
       </div>

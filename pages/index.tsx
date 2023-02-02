@@ -106,7 +106,7 @@ const HeroSection = () => {
               </p>
             </div>
             <div className="mt-auto">
-              <ALink href="#">
+              <ALink href="/projects">
                 <>Voir mes projets</>
               </ALink>
             </div>
