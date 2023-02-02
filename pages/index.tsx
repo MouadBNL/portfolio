@@ -12,6 +12,7 @@ import { useEffect } from "react"
 import { Project } from "@/types/project"
 import { createContentfulClient } from "@/utils/contentful"
 import Head from "next/head"
+import Link from "next/link"
 
 export async function getStaticProps() {
   try {
@@ -62,9 +63,11 @@ const HeroSection = () => {
             voluptatum
           </p>
           <div className="flex justify-center">
-            <Button>
-              <>Contact me</>
-            </Button>
+            <Link href="#contact">
+              <Button>
+                <>Contact</>
+              </Button>
+            </Link>
           </div>
         </div>
 
@@ -325,6 +328,7 @@ const Home = ({ projects }: HomePageProps) => {
       <HeroSection />
       <SkillsSection />
       <ProjectsSection projects={projects} />
+      <div id="contact"></div>
       <ContactSection />
     </>
   )
