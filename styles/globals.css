@@ -19,8 +19,7 @@ h1#name::after {
   position: absolute;
   bottom: 0;
   left: 0;
-  border-radius: 100%;
-  @apply bg-accent-500;
+  @apply bg-accent-500 rounded;
 }
 
 #main-header,  .nav-items {
