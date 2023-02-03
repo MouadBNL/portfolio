@@ -57,11 +57,11 @@ const HeroSection = () => {
           <h2 className="text-4xl sm:text-5xl md:text-6xl text-center font-bold mb-8">
             Bienvenue, je suis Benali Mouad, Développeur web
           </h2>
-          <p className="text-lg md:text-xl text-center text-gray-400 w-full md:w-10/12 mx-auto mb-8">
+          {/* <p className="text-lg md:text-xl text-center text-gray-400 w-full md:w-10/12 mx-auto mb-8">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
             mollitia, molestiae quas vel sint commodi repudiandae consequuntur
             voluptatum
-          </p>
+          </p> */}
           <div className="flex justify-center">
             <a href="#contact">
               <Button>
