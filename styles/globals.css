@@ -1,22 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-  font-family: 'Space Grotesk', Geneva, Tahoma, sans-serif;
+  font-family: "Space Grotesk", Geneva, Tahoma, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+/* Scrollbar start  */
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gr-900;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-500;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-600;
+}
+
+/* Scrollbar end */
+
 h1#name {
   position: relative;
 }
 h1#name::after {
-  content: '';
+  content: "";
   height: 2px;
   width: 80%;
   position: absolute;
@@ -25,15 +43,14 @@ h1#name::after {
   @apply bg-accent-500 rounded;
 }
 
-#main-header,  .nav-items {
+#main-header,
+.nav-items {
   backdrop-filter: blur(15px);
 }
-
 
 .contentful-rich-text {
   @apply text-gr-50;
 }
-
 
 .contentful-rich-text h1 {
   @apply text-gr-50 text-3xl font-bold mb-8;
@@ -48,7 +65,6 @@ h1#name::after {
 .contentful-rich-text p {
   @apply text-gr-200 text-lg mb-4 text-justify;
 }
-
 
 .contentful-rich-text ul {
   @apply ml-4 list-disc;
