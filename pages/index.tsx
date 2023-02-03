@@ -83,7 +83,7 @@ const HeroSection = () => {
               </p>
             </div>
             <div className="mt-auto">
-              <ALink href="#">
+              <ALink href="/blog">
                 <>Voir mon blog</>
               </ALink>
             </div>
