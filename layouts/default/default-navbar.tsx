@@ -67,7 +67,7 @@ export const DefaultNavbar = () => {
               Projets
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               onClick={closeNav}
               className="block px-4 py-1 bg-transparent hover:bg-primary hover:text-white hover:cursor-pointer transition rounded"
@@ -75,8 +75,8 @@ export const DefaultNavbar = () => {
             >
               À propos
             </Link>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <Link
               onClick={closeNav}
               className="block px-4 py-1 bg-transparent hover:bg-primary hover:text-white hover:cursor-pointer transition rounded"
@@ -84,12 +84,12 @@ export const DefaultNavbar = () => {
             >
               Blog
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
               onClick={closeNav}
               className="block px-4 py-1 bg-transparent hover:bg-primary hover:text-white hover:cursor-pointer transition rounded"
-              href="#"
+              href="/#contact"
             >
               Contact
             </Link>
