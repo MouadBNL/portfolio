@@ -30,7 +30,7 @@ const ContactForm = ({}: ContactFormProps) => {
       </div>
       <div className="mb-8">
         <label htmlFor="name" className="block mb-4 text-lg">
-          Nom
+          Contenu
         </label>
         <textarea
           className="w-full px-4 py-3 rounded bg-gr-900 text-lg"
