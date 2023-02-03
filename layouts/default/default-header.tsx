@@ -4,7 +4,7 @@ import { DefaultNavbar } from "./default-navbar"
 const DefaultHeader = () => {
   return (
     <header
-      className="bg-gr-900 bg-opacity-50 text-gr-50 fixed top-0 left-0 right-0 z-50 px-4"
+      className="bg-gr-900 bg-opacity-50 text-gr-50 fixed top-0 left-0 right-0 z-50 px-4 border-b border-gr-700"
       id="main-header"
     >
       <div className="container mx-auto py-6 flex justify-between items-center">

@@ -4,15 +4,18 @@ interface ButtonProps {
   children: ReactElement
   WFull?: boolean
   onClick?: MouseEventHandler<any>
+  loading?: boolean
 }
 
-const Button = ({ children, WFull, onClick }: ButtonProps) => {
+const Button = ({ children, WFull, onClick, loading }: ButtonProps) => {
   return (
     <button
       onClick={onClick ?? (() => {})}
-      className={`text-white font-medium bg-primary py-3 px-9 rounded text-lg hover:bg-gr-900 hover:text-primary-500 border border-primary transition ${
-        WFull ? "w-full" : ""
-      }`}
+      className={`text-white font-medium bg-primary py-3 px-9 rounded text-lg ${
+        loading
+          ? "bg-gr-500 hover:bg-gr-600 border-gr-400"
+          : "hover:text-primary-500 border border-primary hover:bg-gr-900"
+      } transition ${WFull ? "w-full" : ""}`}
     >
       {children}
     </button>
