@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 const DefaultFooter = () => {
   return (
     <footer className="mt-auto bg-gr-900 py-24 text-gr-50 border-t border-gr-700 px-4">
@@ -6,10 +8,17 @@ const DefaultFooter = () => {
           <div>
             <div className="flex items-center">
               <div className="bg-gr-300 rounded-full h-32 w-32 mr-4 lg:mr-11 flex-shrink-0 relative overflow-hidden">
-                <img
+                {/* <img
                   className="inset-0"
                   src="/BenaliMouad500x500.png"
                   alt="Benali Mouad"
+                /> */}
+                <Image
+                  className="inset-0"
+                  src={"/BenaliMouad500x500.png"}
+                  alt={"Benali Mouad"}
+                  width={128}
+                  height={128}
                 />
               </div>
               <div>
@@ -29,7 +38,7 @@ const DefaultFooter = () => {
                 <h4 className="text-lg text-gr-400 mb-4 font-medium">
                   Mon Email
                 </h4>
-                <h5 className="underline">mouadbnl.2k01@gmail.com</h5>
+                <h5 className="underline">contact@mouadbnl.com</h5>
               </div>
               <div>
                 <h4 className="text-lg text-gr-400 mb-4 font-medium">

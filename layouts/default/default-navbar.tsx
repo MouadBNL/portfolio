@@ -37,7 +37,6 @@ export const DefaultNavbar = () => {
   useEffect(() => {
     // navRef.current?.classList.add("hidden")
     router.events.on("routeChangeStart", closeNav)
-    console.log(navRef.current)
   }, [])
 
   return (

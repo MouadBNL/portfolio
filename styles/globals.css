@@ -30,6 +30,14 @@ html {
 
 /* Scrollbar end */
 
+
+/* Project card hover effect */
+.project-card:hover .project-image {
+  transform: scale(1.2);
+}
+/* Project card hover effect end */
+
+
 h1#name {
   position: relative;
 }

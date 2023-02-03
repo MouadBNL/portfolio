@@ -113,22 +113,28 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       </header>
 
       <Link className="block" href={`/projects/${project.slug}`}>
-        <div className="w-full aspect-video overflow-hidden rounded-lg">
-          <img
+        <div className="w-full aspect-video overflow-hidden rounded-lg relative">
+          {/* <img
             className="block w-full aspect-video object-cover project-image transition-all"
             src={
               "https:" + project.thumbnail.fields.file.url ??
               "https://via.placeholder.com/300x300"
             }
             alt={project.title + " image"}
+          /> */}
+          <Image
+            className="block inset-0 object-cover project-image transition-all"
+            src={
+              "https:" + project.thumbnail.fields.file.url ??
+              "https://via.placeholder.com/300x300"
+            }
+            width={450}
+            height={253}
+            alt={project.title + " image"}
           />
         </div>
       </Link>
-      <style jsx>{`
-        .project-card:hover .project-image {
-          transform: scale(1.2);
-        }
-      `}</style>
+      <style jsx>{``}</style>
     </div>
   )
 }
