@@ -45,7 +45,7 @@ const HeroSection = () => {
           className="block mb-4 opacity-50 hover:opacity-100 transition-opacity cursor-pointer"
           style={{ textOrientation: "mixed", writingMode: "vertical-rl" }}
         >
-          mouadbnl.2k01@gmail.com
+          contact@mouadbnl.com
         </span>
         <div
           className="h-4 md:h-28 bg-primary mx-auto"
@@ -303,7 +303,7 @@ const ContactSection = () => {
 
               <h4 className="text-gr-300 text-xl mb-4">Mon email</h4>
               <ALink href="#">
-                <>mouadbnl.2k01@gmail.com</>
+                <>contact@mouadbnl.com</>
               </ALink>
             </div>
           </div>
