@@ -5,11 +5,19 @@ interface ButtonProps {
   WFull?: boolean
   onClick?: MouseEventHandler<any>
   loading?: boolean
+  ariaLabel?: string
 }
 
-const Button = ({ children, WFull, onClick, loading }: ButtonProps) => {
+const Button = ({
+  children,
+  WFull,
+  onClick,
+  loading,
+  ariaLabel,
+}: ButtonProps) => {
   return (
     <button
+      aria-label={ariaLabel ?? "button"}
       onClick={onClick ?? (() => {})}
       className={`text-white font-medium bg-primary py-3 px-9 rounded text-lg ${
         loading

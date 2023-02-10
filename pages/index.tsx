@@ -64,7 +64,7 @@ const HeroSection = () => {
           </p> */}
           <div className="flex justify-center">
             <a href="#contact">
-              <Button>
+              <Button ariaLabel="contact-button">
                 <>Contact</>
               </Button>
             </a>
@@ -83,7 +83,7 @@ const HeroSection = () => {
               </p>
             </div>
             <div className="mt-auto">
-              <ALink href="/blog">
+              <ALink href="/blog" ariaLabel="see-all-blog-posts">
                 <>Voir mon blog</>
               </ALink>
             </div>
@@ -106,7 +106,7 @@ const HeroSection = () => {
               </p>
             </div>
             <div className="mt-auto">
-              <ALink href="/projects">
+              <ALink href="/projects" ariaLabel="see-all-projects">
                 <>Voir mes projets</>
               </ALink>
             </div>
@@ -271,7 +271,7 @@ const ProjectsSection = ({ projects }: { projects: Entry<Project>[] }) => {
             Découvrez les derniers projets que j'ai réalisés
           </h2>
 
-          <ALink href="/projects">
+          <ALink href="/projects" ariaLabel="see-all-projects">
             <>Voir tous les projets</>
           </ALink>
         </div>
@@ -302,7 +302,7 @@ const ContactSection = () => {
               </h2>
 
               <h4 className="text-gr-300 text-xl mb-4">Mon email</h4>
-              <ALink href="#">
+              <ALink href="mailto:contact@mouadbnl.com" ariaLabel="mail-to">
                 <>contact@mouadbnl.com</>
               </ALink>
             </div>

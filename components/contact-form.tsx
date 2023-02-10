@@ -178,6 +178,7 @@ const ContactForm = ({}: ContactFormProps) => {
         )}
       </div>
       <Button
+        ariaLabel="send-message-button"
         WFull={true}
         onClick={(e) => {
           e.preventDefault()
