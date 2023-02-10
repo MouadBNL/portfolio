@@ -3,13 +3,16 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postbuild": "next-sitemap --config scripts/next-sitemap.config.js",
+    "sitemap": "next-sitemap --config scripts/next-sitemap.config.js"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.16.2",
     "@sendgrid/mail": "^7.7.0",
     "contentful": "^9.3.0",
     "next": "latest",
+    "next-sitemap": "^3.1.52",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
