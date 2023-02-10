@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <DefaultLayout>
       <>
         <Head>
-          <link rel="icon" type="image/x-icon" href="favicon.png" />
+          <link rel="icon" type="image/x-icon" href="/favicon.png" />
         </Head>
         <Component {...pageProps} />
       </>
