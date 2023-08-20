@@ -100,7 +100,7 @@ const HeroSection = () => {
             <div className="mb-4">
               <h3 className="text-2xl font-bold mb-4">Mon travail</h3>
               <p className="text-gr-400 text-lg text-justify">
-                J'ai de l'expérience dans la création d'applications Web
+                J'ai acquis une solide expérience en tant que créateur d'applications web
                 dynamiques et réactives, et je cherche toujours à apprendre et à
                 grandir en tant que développeur.
               </p>
