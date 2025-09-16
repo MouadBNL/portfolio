@@ -45,7 +45,7 @@ const HeroSection = () => {
           className="block mb-4 opacity-50 hover:opacity-100 transition-opacity cursor-pointer"
           style={{ textOrientation: "mixed", writingMode: "vertical-rl" }}
         >
-          contact@mouadbnl.com
+          benali.mouadbnl@gmail.com
         </span>
         <div
           className="h-4 md:h-28 bg-primary mx-auto"
@@ -76,7 +76,7 @@ const HeroSection = () => {
             <div className="mb-4">
               <h3 className="text-2xl font-bold mb-4">À propos de moi</h3>
               <p className="text-gr-400 text-lg text-justify">
-              Je suis un ingénieur passionné par tout le spectre du développement, 
+              Je suis uningénieur passionné par tout le spectre du développement, 
               de l’interface utilisateur aux systèmes backend. Curieux et polyvalent, 
               j’aime explorer de nouvelles technologies et approches pour concevoir 
               des solutions fiables, évolutives et élégantes.
@@ -302,8 +302,8 @@ const ContactSection = () => {
               </h2>
 
               <h4 className="text-gr-300 text-xl mb-4">Mon email</h4>
-              <ALink href="mailto:contact@mouadbnl.com" ariaLabel="mail-to">
-                <>contact@mouadbnl.com</>
+              <ALink href="mailto:benali.mouadbnl@gmail.com" ariaLabel="mail-to">
+                <>benali.mouadbnl@gmail.com</>
               </ALink>
             </div>
           </div>

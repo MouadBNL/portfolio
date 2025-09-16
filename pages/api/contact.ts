@@ -10,8 +10,8 @@ export default async function handler(
   console.log("Sending...")
   try {
     await sendgrid.send({
-      to: "contact@mouadbnl.com",
-      from: "contact@mouadbnl.com",
+      to: "benali.mouadbnl@gmail.com",
+      from: "benali.mouadbnl@gmail.com",
       subject: `Portfolio message: ${req.body.subject}`,
       html: `
       <body>

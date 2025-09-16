@@ -38,7 +38,7 @@ const DefaultFooter = () => {
                 <h4 className="text-lg text-gr-400 mb-4 font-medium">
                   Mon Email
                 </h4>
-                <h5 className="underline">contact@mouadbnl.com</h5>
+                <h5 className="underline">benali.mouadbnl@gmail.com</h5>
               </div>
               <div>
                 <h4 className="text-lg text-gr-400 mb-4 font-medium">
