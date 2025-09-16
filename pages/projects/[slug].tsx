@@ -47,17 +47,18 @@ interface ProjectDetailsProps {
 
 const ProjectDetails = ({ project }: ProjectDetailsProps) => {
   console.log(project)
+  const pageTitle = `${project.fields.title} - Benali Mouad`
   return (
     <>
       <Head>
-        <title>{project.fields.title} - Benali Mouad</title>
+        <title>{pageTitle}</title>
       </Head>
-      <section className="bg-gr-900 py-24 text-gr-50">
+      <section className="bg-gr-900 py-24 text-gr-50 px-4">
         <div className="container mx-auto">
-          <h1 className="text-5xl font-bold w-1/2 mt-24 mb-8">
+          <h1 className="text-5xl font-bold lg:w-1/2 mt-24 mb-8">
             {project.fields.title}
           </h1>
-          <p className="w-2/3 text-xl text-gray-400">
+          <p className="lg:w-2/3 text-xl text-gray-400">
             {project.fields.summary}
           </p>
         </div>
@@ -136,7 +137,11 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
               {!!project.fields.github && (
                 <div className="mb-8 ml-auto">
                   <h3 className="text-xl font-bold text-gr-400 mb-2">GitHub</h3>
-                  <ALink>
+                  <ALink
+                    href={project.fields.github}
+                    target="_blank"
+                    ariaLabel="open-project"
+                  >
                     <span className="text-xl">Visit repo</span>
                   </ALink>
                 </div>
@@ -144,7 +149,11 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
               {!!project.fields.demo && (
                 <div className="mb-8 ml-auto">
                   <h3 className="text-xl font-bold text-gr-400 mb-2">Demo</h3>
-                  <ALink>
+                  <ALink
+                    href={project.fields.demo}
+                    target="_blank"
+                    ariaLabel="open-project"
+                  >
                     <span className="text-xl">Live demo</span>
                   </ALink>
                 </div>

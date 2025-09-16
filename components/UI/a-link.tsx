@@ -4,11 +4,15 @@ import { ReactElement } from "react"
 interface ALinkProps {
   children: ReactElement
   href?: string
+  target?: "_blank" | string
+  ariaLabel?: string
 }
 
-const ALink = ({ children, href }: ALinkProps) => {
+const ALink = ({ children, href, target, ariaLabel }: ALinkProps) => {
   return (
     <Link
+      aria-label={ariaLabel ?? "link"}
+      target={target}
       href={href ?? "#"}
       className="text-lg text-gr-50 flex items-center gap-2 border-b border-accent w-fit a-link hover:gap-4 transition-all"
     >

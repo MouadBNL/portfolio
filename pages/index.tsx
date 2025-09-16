@@ -12,6 +12,7 @@ import { useEffect } from "react"
 import { Project } from "@/types/project"
 import { createContentfulClient } from "@/utils/contentful"
 import Head from "next/head"
+import Link from "next/link"
 
 export async function getStaticProps() {
   try {
@@ -44,7 +45,7 @@ const HeroSection = () => {
           className="block mb-4 opacity-50 hover:opacity-100 transition-opacity cursor-pointer"
           style={{ textOrientation: "mixed", writingMode: "vertical-rl" }}
         >
-          mouadbnl.2k01@gmail.com
+          contact@mouadbnl.com
         </span>
         <div
           className="h-4 md:h-28 bg-primary mx-auto"
@@ -56,15 +57,17 @@ const HeroSection = () => {
           <h2 className="text-4xl sm:text-5xl md:text-6xl text-center font-bold mb-8">
             Bienvenue, je suis Benali Mouad, Développeur web
           </h2>
-          <p className="text-lg md:text-xl text-center text-gray-400 w-full md:w-10/12 mx-auto mb-8">
+          {/* <p className="text-lg md:text-xl text-center text-gray-400 w-full md:w-10/12 mx-auto mb-8">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
             mollitia, molestiae quas vel sint commodi repudiandae consequuntur
             voluptatum
-          </p>
+          </p> */}
           <div className="flex justify-center">
-            <Button>
-              <>Contact me</>
-            </Button>
+            <a href="#contact">
+              <Button ariaLabel="contact-button">
+                <>Contact</>
+              </Button>
+            </a>
           </div>
         </div>
 
@@ -80,7 +83,7 @@ const HeroSection = () => {
               </p>
             </div>
             <div className="mt-auto">
-              <ALink href="#">
+              <ALink href="/blog" ariaLabel="see-all-blog-posts">
                 <>Voir mon blog</>
               </ALink>
             </div>
@@ -97,13 +100,13 @@ const HeroSection = () => {
             <div className="mb-4">
               <h3 className="text-2xl font-bold mb-4">Mon travail</h3>
               <p className="text-gr-400 text-lg text-justify">
-                J'ai de l'expérience dans la création d'applications Web
+                J'ai acquis une solide expérience en tant que créateur d'applications web
                 dynamiques et réactives, et je cherche toujours à apprendre et à
                 grandir en tant que développeur.
               </p>
             </div>
             <div className="mt-auto">
-              <ALink href="#">
+              <ALink href="/projects" ariaLabel="see-all-projects">
                 <>Voir mes projets</>
               </ALink>
             </div>
@@ -197,8 +200,8 @@ const SkillsSection = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M224 0C164.281 0 126.948 29.6667 112 89C134.41 59.3455 160.538 48.222 190.385 55.6296C207.448 59.8555 219.552 72.1326 233.115 85.7212C254.99 107.871 280.51 133.482 336 133.482C395.719 133.482 433.052 103.815 448 44.4818C425.615 74.1606 399.486 85.2841 369.615 77.8522C352.552 73.6263 340.448 61.3492 326.885 47.7605C304.938 25.5014 279.526 0 224 0ZM112 133.482C52.2813 133.482 14.9479 163.148 0 222.482C22.434 192.827 48.5625 181.704 78.3854 189.111C95.4479 193.337 107.552 205.614 121.115 219.239C142.99 241.353 168.51 267 224 267C283.719 267 321.052 237.333 336 178C313.615 207.655 287.486 218.754 257.615 211.298C240.552 207.072 228.448 194.795 214.885 181.206C193.01 159.056 167.49 133.409 112 133.409V133.482Z"
                   fill="white"
                 />
@@ -268,7 +271,7 @@ const ProjectsSection = ({ projects }: { projects: Entry<Project>[] }) => {
             Découvrez les derniers projets que j'ai réalisés
           </h2>
 
-          <ALink href="/projects">
+          <ALink href="/projects" ariaLabel="see-all-projects">
             <>Voir tous les projets</>
           </ALink>
         </div>
@@ -299,8 +302,8 @@ const ContactSection = () => {
               </h2>
 
               <h4 className="text-gr-300 text-xl mb-4">Mon email</h4>
-              <ALink href="#">
-                <>mouadbnl.2k01@gmail.com</>
+              <ALink href="mailto:contact@mouadbnl.com" ariaLabel="mail-to">
+                <>contact@mouadbnl.com</>
               </ALink>
             </div>
           </div>
@@ -325,6 +328,7 @@ const Home = ({ projects }: HomePageProps) => {
       <HeroSection />
       <SkillsSection />
       <ProjectsSection projects={projects} />
+      <div id="contact"></div>
       <ContactSection />
     </>
   )

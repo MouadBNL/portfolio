@@ -1,44 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-  font-family: 'Space Grotesk', Geneva, Tahoma, sans-serif;
+  font-family: "Space Grotesk", Geneva, Tahoma, sans-serif;
 }
 
 
 h1#name {
   position: relative;
 }
+
 h1#name::after {
-  content: '';
+  content: "";
   height: 2px;
   width: 80%;
   position: absolute;
   bottom: 0;
   left: 0;
-  border-radius: 100%;
-  @apply bg-accent-500;
+  @apply bg-accent-500 rounded;
 }
 
-#main-header,  .nav-items {
+#main-header,
+.nav-items {
   backdrop-filter: blur(15px);
 }
-
 
 .contentful-rich-text {
   @apply text-gr-50;
 }
 
-
 .contentful-rich-text h1 {
   @apply text-gr-50 text-3xl font-bold mb-8;
 }
+
 .contentful-rich-text h2 {
   @apply text-gr-50 text-2xl font-bold mb-8;
 }
+
 .contentful-rich-text h3 {
   @apply text-gr-50 text-xl font-medium mb-8;
 }
@@ -47,10 +48,10 @@ h1#name::after {
   @apply text-gr-200 text-lg mb-4 text-justify;
 }
 
-
 .contentful-rich-text ul {
   @apply ml-4 list-disc;
 }
+
 .contentful-rich-text ol {
   @apply ml-4 list-decimal;
 }
@@ -58,6 +59,7 @@ h1#name::after {
 .contentful-rich-text img {
   @apply block w-full rounded-lg;
 }
+
 .contentful-rich-text code {
   white-space: pre-wrap;
   @apply block bg-gr-700 p-4 rounded text-sm;
