@@ -76,10 +76,10 @@ const HeroSection = () => {
             <div className="mb-4">
               <h3 className="text-2xl font-bold mb-4">À propos de moi</h3>
               <p className="text-gr-400 text-lg text-justify">
-                Etudiant en génie logiciel passionné par le développement web.
-                Je travaille avec Laravel/PHP, NodeJS, Vue.js et TailwindCSS, et
-                j'ai hâte de mettre mes connaissances à profit dans un cadre
-                professionnel.
+              Je suis un ingénieur passionné par tout le spectre du développement, 
+              de l’interface utilisateur aux systèmes backend. Curieux et polyvalent, 
+              j’aime explorer de nouvelles technologies et approches pour concevoir 
+              des solutions fiables, évolutives et élégantes.
               </p>
             </div>
             <div className="mt-auto">
