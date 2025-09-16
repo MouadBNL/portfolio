@@ -62,41 +62,44 @@ const ContactForm = ({}: ContactFormProps) => {
   }
 
   const sendEmail = async () => {
-    setSentStatus(null)
-    setSending(true)
-    try {
-      if (
-        !(verifyName() && verifyEmail() && verifySubject() && verifyMessage())
-      ) {
-        throw new Error("Veuillez vérifier votre formulaire")
-      }
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-          fullname: name,
-          subject: subject,
-          message: message,
-        }),
-      })
-      if (res.status != 200) {
-        throw new Error("Une erreur s'est produite. Veuillez réessayer.")
-      }
-      setSentMessage("Message envoyé avec succès.")
-      setSentStatus(true)
-      setName("")
-      setEmail("")
-      setSubject("")
-      setMessage("")
-    } catch (err: any) {
-      setSentMessage(err.message)
-      setSentStatus(false)
-    } finally {
-      setSending(false)
-    }
+
+    setSentMessage("Formulaire indisponible pour le moment.")
+    setSentStatus(false)
+    // setSentStatus(null)
+    // setSending(true)
+    // try {
+    //   if (
+    //     !(verifyName() && verifyEmail() && verifySubject() && verifyMessage())
+    //   ) {
+    //     throw new Error("Veuillez vérifier votre formulaire")
+    //   }
+    //   const res = await fetch("/api/contact", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       email: email,
+    //       fullname: name,
+    //       subject: subject,
+    //       message: message,
+    //     }),
+    //   })
+    //   if (res.status != 200) {
+    //     throw new Error("Une erreur s'est produite. Veuillez réessayer.")
+    //   }
+    //   setSentMessage("Message envoyé avec succès.")
+    //   setSentStatus(true)
+    //   setName("")
+    //   setEmail("")
+    //   setSubject("")
+    //   setMessage("")
+    // } catch (err: any) {
+    //   setSentMessage(err.message)
+    //   setSentStatus(false)
+    // } finally {
+    //   setSending(false)
+    // }
   }
 
   return (
@@ -106,7 +109,8 @@ const ContactForm = ({}: ContactFormProps) => {
           Nom <span className="text-red-500">*</span>
         </label>
         <input
-          className="w-full px-4 py-3 rounded bg-gr-900 text-lg"
+          disabled={true}
+          className="w-full px-4 py-3 rounded bg-gr-900 text-lg cursor-not-allowed"
           name="name"
           type={"text"}
           placeholder="Nom"
@@ -125,7 +129,8 @@ const ContactForm = ({}: ContactFormProps) => {
           Email <span className="text-red-500">*</span>
         </label>
         <input
-          className="w-full px-4 py-3 rounded bg-gr-900 text-lg"
+          disabled={true}
+          className="w-full px-4 py-3 rounded bg-gr-900 text-lg cursor-not-allowed"
           name="email"
           type={"email"}
           placeholder="Votre adresse email"
@@ -144,7 +149,8 @@ const ContactForm = ({}: ContactFormProps) => {
           Sujet <span className="text-red-500">*</span>
         </label>
         <input
-          className="w-full px-4 py-3 rounded bg-gr-900 text-lg"
+          disabled={true}
+          className="w-full px-4 py-3 rounded bg-gr-900 text-lg cursor-not-allowed"
           name="subject"
           type={"text"}
           placeholder="Sujet"
@@ -163,7 +169,8 @@ const ContactForm = ({}: ContactFormProps) => {
           Contenu <span className="text-red-500">*</span>
         </label>
         <textarea
-          className="w-full px-4 py-3 rounded bg-gr-900 text-lg"
+          disabled={true}
+          className="w-full px-4 py-3 rounded bg-gr-900 text-lg cursor-not-allowed"
           name="content"
           rows={5}
           placeholder="Contenu de votre message"
@@ -179,6 +186,7 @@ const ContactForm = ({}: ContactFormProps) => {
       </div>
       <Button
         ariaLabel="send-message-button"
+        disabled={true}
         WFull={true}
         onClick={(e) => {
           e.preventDefault()
@@ -188,6 +196,13 @@ const ContactForm = ({}: ContactFormProps) => {
       >
         <>Envoyer</>
       </Button>
+      <p
+        className="mt-4 text-center opacity-50"
+      >
+        SendGrid disabled my account, {"¯\\_(ツ)_/¯."}
+        <br />
+        Looking to change service soon.
+      </p>
       <p
         className={`mt-4 text-lg font-bold ${
           sentStatus ? "text-green-500" : "text-red-500"

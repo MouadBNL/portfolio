@@ -8,39 +8,11 @@
   font-family: "Space Grotesk", Geneva, Tahoma, sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-/* Scrollbar start  */
-
-::-webkit-scrollbar {
-  width: 7px;
-}
-::-webkit-scrollbar-track {
-  @apply bg-gr-900;
-}
-::-webkit-scrollbar-thumb {
-  @apply bg-gray-500;
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-600;
-}
-
-/* Scrollbar end */
-
-
-/* Project card hover effect */
-.project-card:hover .project-image {
-  transform: scale(1.2);
-}
-/* Project card hover effect end */
-
 
 h1#name {
   position: relative;
 }
+
 h1#name::after {
   content: "";
   height: 2px;
@@ -63,9 +35,11 @@ h1#name::after {
 .contentful-rich-text h1 {
   @apply text-gr-50 text-3xl font-bold mb-8;
 }
+
 .contentful-rich-text h2 {
   @apply text-gr-50 text-2xl font-bold mb-8;
 }
+
 .contentful-rich-text h3 {
   @apply text-gr-50 text-xl font-medium mb-8;
 }
@@ -77,6 +51,7 @@ h1#name::after {
 .contentful-rich-text ul {
   @apply ml-4 list-disc;
 }
+
 .contentful-rich-text ol {
   @apply ml-4 list-decimal;
 }
@@ -84,6 +59,7 @@ h1#name::after {
 .contentful-rich-text img {
   @apply block w-full rounded-lg;
 }
+
 .contentful-rich-text code {
   white-space: pre-wrap;
   @apply block bg-gr-700 p-4 rounded text-sm;

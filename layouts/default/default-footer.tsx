@@ -24,7 +24,7 @@ const DefaultFooter = () => {
               <div>
                 <h2 className="text-4xl font-bold">Benali Mouad</h2>
                 <h3 className="text-xl text-gr-400">
-                  Élève ingénieur à l'ENSA de Kénitra
+                  Ingénieur Logiciel
                 </h3>
               </div>
             </div>
@@ -38,7 +38,7 @@ const DefaultFooter = () => {
                 <h4 className="text-lg text-gr-400 mb-4 font-medium">
                   Mon Email
                 </h4>
-                <h5 className="underline">contact@mouadbnl.com</h5>
+                <h5 className="underline">benali.mouadbnl@gmail.com</h5>
               </div>
               <div>
                 <h4 className="text-lg text-gr-400 mb-4 font-medium">
@@ -71,7 +71,7 @@ const DefaultFooter = () => {
             </ul>
           </nav>
 
-          <p className="text-lg">Made with ❤ by Benali Mouad © 2023</p>
+          <p className="text-lg">Made with ❤ by Benali Mouad © {new Date().getFullYear()}</p>
         </div>
       </div>
     </footer>

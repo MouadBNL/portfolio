@@ -6,11 +6,13 @@ interface ButtonProps {
   onClick?: MouseEventHandler<any>
   loading?: boolean
   ariaLabel?: string
+  disabled?: boolean
 }
 
 const Button = ({
   children,
   WFull,
+  disabled,
   onClick,
   loading,
   ariaLabel,
@@ -23,7 +25,8 @@ const Button = ({
         loading
           ? "bg-gr-500 hover:bg-gr-600 border-gr-400"
           : "hover:text-primary-500 border border-primary hover:bg-gr-900"
-      } transition ${WFull ? "w-full" : ""}`}
+      } transition ${WFull ? "w-full" : ""} ${disabled ? "opacity-50 cursor-not-allowed" : ""}`}
+      disabled={disabled}
     >
       {children}
     </button>

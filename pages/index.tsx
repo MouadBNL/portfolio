@@ -41,12 +41,12 @@ const HeroSection = () => {
   return (
     <section className="bg-gr-900 text-gr-50 relative z-0 px-8">
       <div className="absolute bottom-0 right-2 md:right-4 lg:right-16">
-        <span
+        <a href="mailto:benali.mouadbnl@gmail.com" aria-label="mail-to"
           className="block mb-4 opacity-50 hover:opacity-100 transition-opacity cursor-pointer"
           style={{ textOrientation: "mixed", writingMode: "vertical-rl" }}
         >
-          contact@mouadbnl.com
-        </span>
+          benali.mouadbnl@gmail.com
+        </a>
         <div
           className="h-4 md:h-28 bg-primary mx-auto"
           style={{ width: "2px" }}
@@ -55,7 +55,7 @@ const HeroSection = () => {
       <div className="min-h-screen flex items-center justify-center container mx-auto flex-col py-28">
         <div className="md:w-10/12 lg:w-7/12 mb-36">
           <h2 className="text-4xl sm:text-5xl md:text-6xl text-center font-bold mb-8">
-            Bienvenue, je suis Benali Mouad, Développeur web
+            Bienvenue, je suis Benali Mouad, Ingénieur Logiciel.
           </h2>
           {/* <p className="text-lg md:text-xl text-center text-gray-400 w-full md:w-10/12 mx-auto mb-8">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
@@ -76,10 +76,10 @@ const HeroSection = () => {
             <div className="mb-4">
               <h3 className="text-2xl font-bold mb-4">À propos de moi</h3>
               <p className="text-gr-400 text-lg text-justify">
-                Etudiant en génie logiciel passionné par le développement web.
-                Je travaille avec Laravel/PHP, NodeJS, Vue.js et TailwindCSS, et
-                j'ai hâte de mettre mes connaissances à profit dans un cadre
-                professionnel.
+              Je suis uningénieur passionné par tout le spectre du développement, 
+              de l’interface utilisateur aux systèmes backend. Curieux et polyvalent, 
+              j’aime explorer de nouvelles technologies et approches pour concevoir 
+              des solutions fiables, évolutives et élégantes.
               </p>
             </div>
             <div className="mt-auto">
@@ -302,8 +302,8 @@ const ContactSection = () => {
               </h2>
 
               <h4 className="text-gr-300 text-xl mb-4">Mon email</h4>
-              <ALink href="mailto:contact@mouadbnl.com" ariaLabel="mail-to">
-                <>contact@mouadbnl.com</>
+              <ALink href="mailto:benali.mouadbnl@gmail.com" ariaLabel="mail-to">
+                <>benali.mouadbnl@gmail.com</>
               </ALink>
             </div>
           </div>
