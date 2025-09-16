@@ -41,12 +41,12 @@ const HeroSection = () => {
   return (
     <section className="bg-gr-900 text-gr-50 relative z-0 px-8">
       <div className="absolute bottom-0 right-2 md:right-4 lg:right-16">
-        <span
+        <a href="mailto:benali.mouadbnl@gmail.com" aria-label="mail-to"
           className="block mb-4 opacity-50 hover:opacity-100 transition-opacity cursor-pointer"
           style={{ textOrientation: "mixed", writingMode: "vertical-rl" }}
         >
           benali.mouadbnl@gmail.com
-        </span>
+        </a>
         <div
           className="h-4 md:h-28 bg-primary mx-auto"
           style={{ width: "2px" }}
@@ -55,7 +55,7 @@ const HeroSection = () => {
       <div className="min-h-screen flex items-center justify-center container mx-auto flex-col py-28">
         <div className="md:w-10/12 lg:w-7/12 mb-36">
           <h2 className="text-4xl sm:text-5xl md:text-6xl text-center font-bold mb-8">
-            Bienvenue, je suis Benali Mouad, Développeur web
+            Bienvenue, je suis Benali Mouad, Ingénieur Logiciel.
           </h2>
           {/* <p className="text-lg md:text-xl text-center text-gray-400 w-full md:w-10/12 mx-auto mb-8">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
