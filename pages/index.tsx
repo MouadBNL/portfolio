@@ -76,7 +76,7 @@ const HeroSection = () => {
             <div className="mb-4">
               <h3 className="text-2xl font-bold mb-4">À propos de moi</h3>
               <p className="text-gr-400 text-lg text-justify">
-              Je suis uningénieur passionné par tout le spectre du développement, 
+              Je suis un ingénieur logiciel passionné par tout le spectre du développement, 
               de l’interface utilisateur aux systèmes backend. Curieux et polyvalent, 
               j’aime explorer de nouvelles technologies et approches pour concevoir 
               des solutions fiables, évolutives et élégantes.
